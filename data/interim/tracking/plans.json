@@ -1,0 +1,836 @@
+[
+    {
+        "id": 1,
+        "var": "Utilities",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "low_variance",
+        "params": {
+            "reason": "near_constant_and_low_target_relationship"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 2,
+        "var": "Street",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "low_variance",
+        "params": {
+            "reason": "near_constant_and_low_target_relationship"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 3,
+        "var": "3SsnPorch",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "low_variance",
+        "params": {
+            "reason": "near_constant_and_low_target_relationship"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 4,
+        "var": "LowQualFinSF",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "low_variance",
+        "params": {
+            "reason": "near_constant_and_low_target_relationship"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 5,
+        "var": "MiscVal",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "low_variance",
+        "params": {
+            "reason": "near_constant_and_low_target_relationship"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 6,
+        "var": "HasPool",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "redundancy",
+        "params": {
+            "reason": "redundant_pool_feature",
+            "retained_feature": "PoolArea"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 7,
+        "var": "PoolQC",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "redundancy",
+        "params": {
+            "reason": "redundant_pool_feature",
+            "retained_feature": "PoolArea"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 8,
+        "var": "YearBuilt",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "redundancy",
+        "params": {
+            "reason": "replaced_by_derived_age_feature"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 9,
+        "var": "YearRemodAdd",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "redundancy",
+        "params": {
+            "reason": "replaced_by_derived_age_feature"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 10,
+        "var": "GarageYrBlt",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "redundancy",
+        "params": {
+            "reason": "replaced_by_derived_age_feature"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 11,
+        "var": "FullBath",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "multicollinearity",
+        "params": {
+            "reason": "redundant_with_engineered_feature"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 12,
+        "var": "HalfBath",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "multicollinearity",
+        "params": {
+            "reason": "redundant_with_engineered_feature"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 13,
+        "var": "BsmtFullBath",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "multicollinearity",
+        "params": {
+            "reason": "redundant_with_engineered_feature"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 14,
+        "var": "BsmtHalfBath",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "multicollinearity",
+        "params": {
+            "reason": "redundant_with_engineered_feature"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 15,
+        "var": "HasGarage",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "multicollinearity",
+        "params": {
+            "reason": "redundant_with_engineered_feature"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 16,
+        "var": "TotalBsmtSF",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "multicollinearity",
+        "params": {
+            "reason": "redundant_with_engineered_aggregate_features"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 17,
+        "var": "GrLivArea",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "multicollinearity",
+        "params": {
+            "reason": "redundant_with_engineered_aggregate_features"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 18,
+        "var": "1stFlrSF",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "multicollinearity",
+        "params": {
+            "reason": "redundant_with_engineered_aggregate_features"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 19,
+        "var": "2ndFlrSF",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "multicollinearity",
+        "params": {
+            "reason": "redundant_with_engineered_aggregate_features"
+        },
+        "status": "applied"
+    },
+    {
+        "id": 20,
+        "var": "MSSubClass",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 21,
+        "var": "MSZoning",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 22,
+        "var": "Street",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 23,
+        "var": "Alley",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 24,
+        "var": "LandContour",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 25,
+        "var": "LotConfig",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 26,
+        "var": "Neighborhood",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 27,
+        "var": "Condition1",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 28,
+        "var": "Condition2",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 29,
+        "var": "BldgType",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 30,
+        "var": "HouseStyle",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 31,
+        "var": "RoofStyle",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 32,
+        "var": "RoofMatl",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 33,
+        "var": "Exterior1st",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 34,
+        "var": "Exterior2nd",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 35,
+        "var": "MasVnrType",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 36,
+        "var": "Foundation",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 37,
+        "var": "Heating",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 38,
+        "var": "CentralAir",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 39,
+        "var": "Electrical",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 40,
+        "var": "GarageType",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 41,
+        "var": "MiscFeature",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 42,
+        "var": "SaleType",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 43,
+        "var": "SaleCondition",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {
+            "drop": null,
+            "handle_unknown": "ignore"
+        },
+        "status": "planned"
+    },
+    {
+        "id": 44,
+        "var": "LotShape",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "IR3",
+                "IR2",
+                "IR1",
+                "Reg"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 45,
+        "var": "Utilities",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "NoSeWa",
+                "AllPub"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 46,
+        "var": "LandSlope",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "Sev",
+                "Mod",
+                "Gtl"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 47,
+        "var": "ExterQual",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "Po",
+                "Fa",
+                "TA",
+                "Gd",
+                "Ex"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 48,
+        "var": "ExterCond",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "Po",
+                "Fa",
+                "TA",
+                "Gd",
+                "Ex"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 49,
+        "var": "BsmtQual",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "None",
+                "Po",
+                "Fa",
+                "TA",
+                "Gd",
+                "Ex"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 50,
+        "var": "BsmtCond",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "None",
+                "Po",
+                "Fa",
+                "TA",
+                "Gd",
+                "Ex"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 51,
+        "var": "BsmtExposure",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "None",
+                "No",
+                "Mn",
+                "Av",
+                "Gd"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 52,
+        "var": "BsmtFinType1",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "None",
+                "Unf",
+                "LwQ",
+                "Rec",
+                "BLQ",
+                "ALQ",
+                "GLQ"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 53,
+        "var": "BsmtFinType2",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "None",
+                "Unf",
+                "LwQ",
+                "Rec",
+                "BLQ",
+                "ALQ",
+                "GLQ"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 54,
+        "var": "HeatingQC",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "Po",
+                "Fa",
+                "TA",
+                "Gd",
+                "Ex"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 55,
+        "var": "KitchenQual",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "Po",
+                "Fa",
+                "TA",
+                "Gd",
+                "Ex"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 56,
+        "var": "Functional",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "Sal",
+                "Sev",
+                "Maj2",
+                "Maj1",
+                "Mod",
+                "Min2",
+                "Min1",
+                "Typ"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 57,
+        "var": "FireplaceQu",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "None",
+                "Po",
+                "Fa",
+                "TA",
+                "Gd",
+                "Ex"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 58,
+        "var": "GarageFinish",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "None",
+                "Unf",
+                "RFn",
+                "Fin"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 59,
+        "var": "GarageQual",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "None",
+                "Po",
+                "Fa",
+                "TA",
+                "Gd",
+                "Ex"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 60,
+        "var": "GarageCond",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "None",
+                "Po",
+                "Fa",
+                "TA",
+                "Gd",
+                "Ex"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 61,
+        "var": "PavedDrive",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "N",
+                "P",
+                "Y"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 62,
+        "var": "PoolQC",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "ordinal",
+        "params": {
+            "categories": [
+                "None",
+                "Fa",
+                "TA",
+                "Gd",
+                "Ex"
+            ]
+        },
+        "status": "planned"
+    },
+    {
+        "id": 63,
+        "var": "Fence",
+        "stage": "DP - Encoding",
+        "action": "encode",
+        "method": "onehot",
+        "params": {},
+        "status": "planned"
+    }
+]

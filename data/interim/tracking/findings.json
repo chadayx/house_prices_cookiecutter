@@ -1,0 +1,234 @@
+[
+    {
+        "key": "basement_first_floor_correlation",
+        "var": "TotalBsmtSF | 1stFlrSF",
+        "stage": "DU - Feature Analysis - Multicollinearity",
+        "finding": "Se detectó una correlación elevada entre variables (r=0.827); la posible redundancia debe evaluarse antes del modelado.",
+        "status": "pending",
+        "resolution": null
+    },
+    {
+        "key": "condition2_near_constant",
+        "var": "Condition2",
+        "stage": "DU - Quality - Near Constant",
+        "finding": "La categoría dominante 'Norm' representa el 99.06% de las observaciones sin valores faltantes; requiere revisar su relevancia.",
+        "status": "resolved",
+        "resolution": "Se revisó Condition2 y se conservó en la alternativa local; la baja variación por sí sola no justificó eliminarla."
+    },
+    {
+        "key": "electrical_missing",
+        "var": "Electrical",
+        "stage": "DU - Quality - Missing Values",
+        "finding": "1 valores faltantes (0.09%) en entrenamiento. Categoría dominante: SBrkr (1071/1168); revisar la imputación en DP.",
+        "status": "pending",
+        "resolution": null
+    },
+    {
+        "key": "feature_selection_high_correlation",
+        "var": "multiple",
+        "stage": "DP - Feature Selection",
+        "finding": "Se identificaron pares de variables con correlación elevada; la selección requiere revisar las variables temporales, binarias y agregadas junto con los demás criterios.",
+        "status": "resolved",
+        "resolution": "Se revisaron las correlaciones elevadas; la selección no se basó únicamente en correlación y se contrastó con VIF."
+    },
+    {
+        "key": "feature_selection_low_variance",
+        "var": "multiple",
+        "stage": "DP - Feature Selection",
+        "finding": "El análisis identificó 14 variables con una categoría dominante de al menos 95%; requieren evaluar redundancia y relación con el target antes de seleccionar columnas.",
+        "status": "resolved",
+        "resolution": "Se revisó la baja variación y se definieron alternativas locales de conservar, eliminar o evaluar columnas. Las decisiones deberán comprobarse en los experimentos."
+    },
+    {
+        "key": "feature_selection_vif",
+        "var": "multiple",
+        "stage": "DP - Feature Selection",
+        "finding": "El análisis VIF identificó 0 valores infinitos y 31 predictores con VIF mayor que 10; requieren revisar multicolinealidad.",
+        "status": "resolved",
+        "resolution": "Se evaluó la multicolinealidad tras las eliminaciones propuestas. TotalSF y QualGrLivArea se conservaron como alternativas pendientes de validación con modelos."
+    },
+    {
+        "key": "garage_cars_area_correlation",
+        "var": "GarageCars | GarageArea",
+        "stage": "DU - Feature Analysis - Multicollinearity",
+        "finding": "Se detectó una correlación elevada entre variables (r=0.883); la posible redundancia debe evaluarse antes del modelado.",
+        "status": "resolved",
+        "resolution": "Se revisó la correlación entre GarageCars y GarageArea y se conservaron ambas en la alternativa local de selección."
+    },
+    {
+        "key": "garage_condition_near_constant",
+        "var": "GarageCond",
+        "stage": "DU - Quality - Near Constant",
+        "finding": "La categoría dominante 'TA' representa el 96.11% de las observaciones sin valores faltantes; requiere revisar su relevancia.",
+        "status": "resolved",
+        "resolution": "Se revisó GarageCond y se conservó en la alternativa local; la baja variación por sí sola no justificó eliminarla."
+    },
+    {
+        "key": "garage_quality_near_constant",
+        "var": "GarageQual",
+        "stage": "DU - Quality - Near Constant",
+        "finding": "La categoría dominante 'TA' representa el 95.11% de las observaciones sin valores faltantes; requiere revisar su relevancia.",
+        "status": "resolved",
+        "resolution": "Se revisó GarageQual y se conservó en la alternativa local; la baja variación por sí sola no justificó eliminarla."
+    },
+    {
+        "key": "garage_year_before_house",
+        "var": "GarageYrBlt",
+        "stage": "DU - Quality - Inconsistency",
+        "finding": "5 registros de entrenamiento presentan GarageYrBlt anterior a YearBuilt; revisar en DP.",
+        "status": "pending",
+        "resolution": null
+    },
+    {
+        "key": "gr_liv_area_multivariate_outliers",
+        "var": "GrLivArea",
+        "stage": "DP - Outliers",
+        "finding": "Las viviendas de entrenamiento con Id [524, 1299] son observaciones atípicas multivariadas: presentan GrLivArea muy elevada y OverallQual=10, pero SalePrice inusualmente bajo respecto a viviendas comparables.",
+        "status": "resolved",
+        "resolution": "Se conservaron las observaciones revisadas: son extremas, pero no se confirmó un error de datos."
+    },
+    {
+        "key": "gr_liv_area_target_outliers",
+        "var": "GrLivArea",
+        "stage": "DU - Feature Analysis - Numeric vs Target",
+        "finding": "Relación positiva fuerte con SalePrice, con observaciones extremas de GrLivArea elevada que presentan SalePrice inusualmente bajo; requiere revisar los valores atípicos.",
+        "status": "resolved",
+        "resolution": "Se revisaron las observaciones extremas de GrLivArea presentes en entrenamiento y se conservaron al no confirmarse errores de datos."
+    },
+    {
+        "key": "heating_near_constant",
+        "var": "Heating",
+        "stage": "DU - Quality - Near Constant",
+        "finding": "La categoría dominante 'GasA' representa el 97.60% de las observaciones sin valores faltantes; requiere revisar su relevancia.",
+        "status": "resolved",
+        "resolution": "Se revisó Heating y se conservó en la alternativa local; la baja variación por sí sola no justificó eliminarla."
+    },
+    {
+        "key": "house_garage_year_correlation",
+        "var": "YearBuilt | GarageYrBlt",
+        "stage": "DU - Feature Analysis - Multicollinearity",
+        "finding": "Se detectó una correlación elevada entre variables (r=0.820); la posible redundancia debe evaluarse antes del modelado.",
+        "status": "pending",
+        "resolution": null
+    },
+    {
+        "key": "living_area_rooms_correlation",
+        "var": "GrLivArea | TotRmsAbvGrd",
+        "stage": "DU - Feature Analysis - Multicollinearity",
+        "finding": "Se detectó una correlación elevada entre variables (r=0.821); la posible redundancia debe evaluarse antes del modelado.",
+        "status": "pending",
+        "resolution": null
+    },
+    {
+        "key": "lot_frontage_missing",
+        "var": "LotFrontage",
+        "stage": "DU - Quality - Missing Values",
+        "finding": "18.58% de valores faltantes en entrenamiento. La distribución de LotFrontage varía según Neighborhood; candidata a imputación por Neighborhood.",
+        "status": "pending",
+        "resolution": null
+    },
+    {
+        "key": "mas_vnr_area_missing",
+        "var": "MasVnrArea",
+        "stage": "DU - Quality - Missing Values",
+        "finding": "6 registros de entrenamiento presentan tanto MasVnrType como MasVnrArea faltantes; requieren una decisión de tratamiento.",
+        "status": "pending",
+        "resolution": null
+    },
+    {
+        "key": "mas_vnr_type_positive_area_missing",
+        "var": "MasVnrType",
+        "stage": "DU - Quality - Inconsistency",
+        "finding": "5 registros de entrenamiento presentan MasVnrType faltante pese a tener MasVnrArea positiva.",
+        "status": "pending",
+        "resolution": null
+    },
+    {
+        "key": "mas_vnr_type_structural_absence",
+        "var": "MasVnrType",
+        "stage": "DU - Quality - Missing Values",
+        "finding": "672 registros de entrenamiento presentan MasVnrType faltante y MasVnrArea igual a cero; probable ausencia estructural.",
+        "status": "pending",
+        "resolution": null
+    },
+    {
+        "key": "ms_subclass_representation",
+        "var": "MSSubClass",
+        "stage": "DU_Structure",
+        "finding": "Variable nominal representada mediante códigos enteros. Su tratamiento en DP debe preservar el carácter categórico.",
+        "status": "resolved",
+        "resolution": "MSSubClass se convirtió de códigos numéricos a texto para preservar su naturaleza nominal."
+    },
+    {
+        "key": "pool_features_redundancy",
+        "var": "HasPool, PoolArea, PoolQC",
+        "stage": "DP - Feature Selection",
+        "finding": "Las variables de piscina con baja variación pueden representar información redundante.",
+        "status": "resolved",
+        "resolution": "En la alternativa local se conserva PoolArea y se propone eliminar HasPool y PoolQC por redundancia."
+    },
+    {
+        "key": "remodel_year_after_sale",
+        "var": "YearRemodAdd | YrSold",
+        "stage": "DP - Feature Engineering - Temporal",
+        "finding": "1 registros de entrenamiento presentan YearRemodAdd posterior a YrSold y producen RemodAge negativo. Id: [524].",
+        "status": "resolved",
+        "resolution": "RemodAge se limitó a un mínimo de cero, conservando YearRemodAdd y YrSold originales."
+    },
+    {
+        "key": "roof_material_near_constant",
+        "var": "RoofMatl",
+        "stage": "DU - Quality - Near Constant",
+        "finding": "La categoría dominante 'CompShg' representa el 98.37% de las observaciones sin valores faltantes; requiere revisar su relevancia.",
+        "status": "resolved",
+        "resolution": "Se revisó RoofMatl y se conservó en la alternativa local; la baja variación por sí sola no justificó eliminarla."
+    },
+    {
+        "key": "sale_price_iqr_outliers",
+        "var": "SalePrice",
+        "stage": "DU - Target Analysis - Outliers",
+        "finding": "Las observaciones de entrenamiento en la cola superior exceden el límite superior del IQR (342,312.50); requieren evaluación y no deben eliminarse automáticamente.",
+        "status": "resolved",
+        "resolution": "Las observaciones de la cola superior se revisaron y conservaron siguiendo la decisión original; no se aplicó eliminación automática por IQR."
+    },
+    {
+        "key": "sale_price_skewness",
+        "var": "SalePrice",
+        "stage": "DU - Target Analysis - Distribution",
+        "finding": "SalePrice presenta una marcada asimetría positiva; se debe evaluar una transformación de su distribución en DP.",
+        "status": "pending",
+        "resolution": null
+    },
+    {
+        "key": "street_near_constant",
+        "var": "Street",
+        "stage": "DU - Quality - Near Constant",
+        "finding": "La categoría dominante 'Pave' representa el 99.66% de las observaciones sin valores faltantes; requiere revisar su relevancia.",
+        "status": "resolved",
+        "resolution": "Se propone eliminar Street en esta alternativa local de selección; la preparación común conserva la columna."
+    },
+    {
+        "key": "structural_missing_features",
+        "var": "structural_missing_features",
+        "stage": "DU - Quality - Missing Values",
+        "finding": "Se identificaron valores faltantes estructurales en las variables: PoolQC, MiscFeature, Alley, Fence, FireplaceQu, GarageType, GarageYrBlt, GarageFinish, GarageQual, GarageCond, BsmtExposure, BsmtFinType1, BsmtFinType2, BsmtQual y BsmtCond. Estos valores faltantes representan la ausencia de la característica correspondiente en la vivienda.",
+        "status": "pending",
+        "resolution": null
+    },
+    {
+        "key": "temporal_features_redundancy",
+        "var": "YearBuilt, YearRemodAdd, GarageYrBlt",
+        "stage": "DP - Feature Selection",
+        "finding": "Las variables de año original y las edades derivadas requieren una revisión de redundancia; las correlaciones se muestran en temporal_review.",
+        "status": "resolved",
+        "resolution": "En la alternativa local se conservan las edades derivadas y se propone eliminar los años originales."
+    },
+    {
+        "key": "utilities_near_constant",
+        "var": "Utilities",
+        "stage": "DU - Quality - Near Constant",
+        "finding": "La categoría dominante 'AllPub' representa el 99.91% de las observaciones sin valores faltantes; requiere revisar su relevancia.",
+        "status": "resolved",
+        "resolution": "Se propone eliminar Utilities en esta alternativa local de selección; la preparación común conserva la columna."
+    }
+]

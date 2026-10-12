@@ -1,0 +1,52 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "house_prices_mlops"
+version = "0.0.1"
+description = "An end-to-end Machine Learning project for predicting house prices"
+authors = [
+  { name = "Chaday Omar" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+dependencies = [
+    "ipython",
+    "jupyterlab",
+    "loguru",
+    "matplotlib",
+    "mkdocs",
+    "mlflow>=3.17.0",
+    "notebook",
+    "numpy",
+    "pandas",
+    "pip",
+    "pytest",
+    "python-dotenv",
+    "ruff",
+    "scikit-learn",
+    "seaborn",
+    "statsmodels>=0.15.0",
+    "tqdm",
+    "typer",
+]
+requires-python = "~=3.10.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["house_prices_mlops"]
+include = ["pyproject.toml", "house_prices_mlops/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["house_prices_mlops"]
+force-sort-within-sections = true
+

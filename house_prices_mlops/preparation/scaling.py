@@ -1,0 +1,1 @@
+"""Escalado de variables numéricas."""

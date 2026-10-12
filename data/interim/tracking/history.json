@@ -1,0 +1,317 @@
+[
+    {
+        "id": 1,
+        "var": "MSSubClass",
+        "stage": "DP - Structure",
+        "action": "change_dtype",
+        "method": "astype(\"string\")",
+        "before": "int64",
+        "after": "string"
+    },
+    {
+        "id": 2,
+        "var": "RemodAge",
+        "stage": "DP - Feature Engineering - Temporal",
+        "action": "create_feature",
+        "method": "year_difference_clipped",
+        "before": "1 records with negative RemodAge",
+        "after": "RemodAge minimum constrained to 0"
+    },
+    {
+        "id": 3,
+        "var": "HouseAge",
+        "stage": "DP - Feature Engineering",
+        "action": "create_feature",
+        "method": "YrSold - YearBuilt",
+        "before": "YrSold, YearBuilt",
+        "after": "HouseAge"
+    },
+    {
+        "id": 4,
+        "var": "RemodAge",
+        "stage": "DP - Feature Engineering",
+        "action": "create_feature",
+        "method": "YrSold - YearRemodAdd",
+        "before": "YrSold, YearRemodAdd",
+        "after": "RemodAge"
+    },
+    {
+        "id": 5,
+        "var": "GarageAge",
+        "stage": "DP - Feature Engineering",
+        "action": "create_feature",
+        "method": "YrSold - GarageYrBlt",
+        "before": "YrSold, GarageYrBlt",
+        "after": "GarageAge"
+    },
+    {
+        "id": 6,
+        "var": "TotalSF",
+        "stage": "DP - Feature Engineering",
+        "action": "create_feature",
+        "method": "TotalBsmtSF + GrLivArea",
+        "before": "TotalBsmtSF, GrLivArea",
+        "after": "TotalSF"
+    },
+    {
+        "id": 7,
+        "var": "TotalBathrooms",
+        "stage": "DP - Feature Engineering",
+        "action": "create_feature",
+        "method": "FullBath + 0.5*HalfBath + BsmtFullBath + 0.5*BsmtHalfBath",
+        "before": "FullBath, HalfBath, BsmtFullBath, BsmtHalfBath",
+        "after": "TotalBathrooms"
+    },
+    {
+        "id": 8,
+        "var": "TotalPorchSF",
+        "stage": "DP - Feature Engineering",
+        "action": "create_feature",
+        "method": "WoodDeckSF + OpenPorchSF + EnclosedPorch + 3SsnPorch + ScreenPorch",
+        "before": "WoodDeckSF, OpenPorchSF, EnclosedPorch, 3SsnPorch, ScreenPorch",
+        "after": "TotalPorchSF"
+    },
+    {
+        "id": 9,
+        "var": "HasGarage",
+        "stage": "DP - Feature Engineering",
+        "action": "create_binary_feature",
+        "method": "GarageArea > 0",
+        "before": "source variable(s)",
+        "after": "HasGarage"
+    },
+    {
+        "id": 10,
+        "var": "HasBasement",
+        "stage": "DP - Feature Engineering",
+        "action": "create_binary_feature",
+        "method": "TotalBsmtSF > 0",
+        "before": "source variable(s)",
+        "after": "HasBasement"
+    },
+    {
+        "id": 11,
+        "var": "HasPool",
+        "stage": "DP - Feature Engineering",
+        "action": "create_binary_feature",
+        "method": "PoolArea > 0",
+        "before": "source variable(s)",
+        "after": "HasPool"
+    },
+    {
+        "id": 12,
+        "var": "HasFireplace",
+        "stage": "DP - Feature Engineering",
+        "action": "create_binary_feature",
+        "method": "Fireplaces > 0",
+        "before": "source variable(s)",
+        "after": "HasFireplace"
+    },
+    {
+        "id": 13,
+        "var": "IsRemodeled",
+        "stage": "DP - Feature Engineering",
+        "action": "create_binary_feature",
+        "method": "YearBuilt != YearRemodAdd",
+        "before": "source variable(s)",
+        "after": "IsRemodeled"
+    },
+    {
+        "id": 14,
+        "var": "QualGrLivArea",
+        "stage": "DP - Feature Engineering",
+        "action": "create_interaction_feature",
+        "method": "OverallQual * GrLivArea",
+        "before": "OverallQual, GrLivArea",
+        "after": "QualGrLivArea"
+    },
+    {
+        "id": 15,
+        "var": "GrLivArea",
+        "stage": "DP - Outliers",
+        "action": "retain_outliers",
+        "method": "multivariate_analysis",
+        "before": "Training Ids [524, 1299] identified as multivariate outliers",
+        "after": "Retained: extreme but plausible observations"
+    },
+    {
+        "id": 16,
+        "var": "multiple",
+        "stage": "DP - Outliers",
+        "action": "retain_outliers",
+        "method": "IQR + domain + multivariate_analysis",
+        "before": "Outliers detected across multiple numeric variables",
+        "after": "Retained: no confirmed data errors; extremes considered plausible"
+    },
+    {
+        "id": 17,
+        "var": "Utilities",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 18,
+        "var": "Street",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 19,
+        "var": "3SsnPorch",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 20,
+        "var": "LowQualFinSF",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 21,
+        "var": "MiscVal",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 22,
+        "var": "HasPool",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 23,
+        "var": "PoolQC",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 24,
+        "var": "YearBuilt",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 25,
+        "var": "YearRemodAdd",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 26,
+        "var": "GarageYrBlt",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 27,
+        "var": "FullBath",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 28,
+        "var": "HalfBath",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 29,
+        "var": "BsmtFullBath",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 30,
+        "var": "BsmtHalfBath",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 31,
+        "var": "HasGarage",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 32,
+        "var": "TotalBsmtSF",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 33,
+        "var": "GrLivArea",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 34,
+        "var": "1stFlrSF",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    },
+    {
+        "id": 35,
+        "var": "2ndFlrSF",
+        "stage": "DP - Feature Selection",
+        "action": "drop",
+        "method": "feature_selection",
+        "before": "feature present",
+        "after": "feature removed"
+    }
+]
